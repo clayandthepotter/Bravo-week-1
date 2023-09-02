@@ -128,3 +128,22 @@ console.log(isPalindrome("madam") == true); //true
 console.log(isPalindrome("hello") == false); //true
 console.log(isPalindrome("A man a plan a canal Panama") == true); //true
 console.log(isPalindrome("TACO CAT") == true); //true
+
+
+//4. Write a function named "convertTemperature" that takes two parameters: 
+//a temperature value and a string representing the current unit ("C" for Celsius or "F" for Fahrenheit). 
+//The function should convert the temperature to the opposite unit and return the converted value in a string
+//with the unit.
+
+
+
+//Test: Uncomment the following four lines before running your code. Verify the results.
+//console.log(convertTemperature(0, 'C') == "32F"); //true
+//console.log(convertTemperature(100, 'C') == "210F"); //false
+//console.log(convertTemperature(32, 'F') == "0C"); //true
+
+
+
+//console.log(convertTemperature(98.6, 'F') == 37); //true
+//console.log(convertTemperature(-40, 'C') == -40); //true
+//console.log(convertTemperature(-40, 'F') == -40); //true
