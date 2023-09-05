@@ -13,13 +13,13 @@ let contacts = {
 // you can look things up in objects
 
 // look up 'Mark''s number and store as separate variable
-let marksNum = contacts['Mark'];
+// let marksNum = contacts['Mark'];
 // console.log(marksNum);
 
 // add things to the object
 // Mary's number is 214-567-8901. Add her to contacts object
 contacts["Mary"] = '214-567-8901';
-// console.log(contacts);
+console.log(contacts);
 
 //You have a video rental store 
 //Create a movie object that stores the following properties for the movie
@@ -32,14 +32,14 @@ const movie1 = {
     numCopies :  0,
 }
 
-console.log(movie1);
+// console.log(movie1);
 
-//print out a statement summary of the movie info
-//eg. "Barbie was released in 2023 and has a pg-13 rating. we have 3 copies."
-let summary1 =
-    (`${movie1.title} was released in ${movie1.releaseYear} and has a ${movie1.rating} rating. We have ${movie1.numCopies} copies.`)
+// //print out a statement summary of the movie info
+// //eg. "Barbie was released in 2023 and has a pg-13 rating. we have 3 copies."
+// let summary1 =
+//     (`${movie1.title} was released in ${movie1.releaseYear} and has a ${movie1.rating} rating. We have ${movie1.numCopies} copies.`)
 
-console.log(summary1)
+// console.log(summary1)
 
 const movie2 = {
     title : 'Oppenheimer',
@@ -48,20 +48,20 @@ const movie2 = {
     numCopies :  1,
 }
 
-console.log(movie2);
+// console.log(movie2);
 
 
-let summary2 =
-    (`${movie2.title} was released in ${movie2.releaseYear} and has a ${movie2.rating} rating. We have ${movie2.numCopies} copies.`)
+// let summary2 =
+//     (`${movie2.title} was released in ${movie2.releaseYear} and has a ${movie2.rating} rating. We have ${movie2.numCopies} copies.`)
 
-console.log(summary2)
+// console.log(summary2)
 
 
 
 let inventory = [movie1, movie2];
 
-// write a function that lets people check out a movie by returning its title
-// we need to find the correct movie and decrease the number of copies by 1 and return
+// // write a function that lets people check out a movie by returning its title
+// // we need to find the correct movie and decrease the number of copies by 1 and return
 
 
 function rentMovie(title) {
@@ -87,5 +87,5 @@ function rentMovie(title) {
 
 
 rentMovie('barbie')
-rentMovie('the lion king')
-rentMovie('oppenheimer')
+// rentMovie('the lion king')
+// rentMovie('oppenheimer')
