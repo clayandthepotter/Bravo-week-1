@@ -133,8 +133,15 @@ function toggleAvailability(bookId) {
   // your code here
   for (let book of library) {
     
+    if (book.bookId == bookId) {
+      book.availability = !book.availability
+    }
+    console.log(book)
   }
+
 }
+
+toggleAvailability('777')
 
 
 // Task 9: Multiple Copies
