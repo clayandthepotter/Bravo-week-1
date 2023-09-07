@@ -6,21 +6,24 @@ let book1 = {
   title: 'The Great Gatsby',
   author: 'F. Scott Fitzgerald',
   bookId: '345',
-  availability: true
+  availability: true,
+  copies: 1
 };
 
 let book2 = {
   title: 'The Hobbit',
   author: 'J. R. R. Tolkien',
   bookId: '346',
-  availability: true
+  availability: true,
+  copies: 1
 };
 
 let book3 = {
   title: 'The Lord of The Rings',
   author: 'J. R. R Tolkien',
   bookId: '347',
-  availability: true
+  availability: true,
+  copies: 1
 };
 
 
@@ -35,26 +38,31 @@ let library = [
   book3,
 ];
 
-console.log(`Current library:`, library)
+// console.log(`Current library:`, library)
 
 // // Task 3: Add a Book to the Collection
 // // Write a function `addBook` which takes a book object as a parameter and adds it to the collection of books.
 
-function addBook(title, author, bookId, availability) {
+function addBook(title, author, bookId, availability, copies) {
   // Create an book using the parameters
-  const book = {
+  let book = {
   title: title,
   author: author,
   bookId: bookId,
   availability: availability,
+  copies: copies,
   };
   // Add the book to the library
   library.push(book);
+  for (let book of library) {
+    console.log(book);
+  }
   console.log(`You have added ${title} to the library.`);
 }
 
-addBook('The Bible', 'God', '777', true);
-console.log(`Updated library:`, library);
+
+addBook('The Bible', 'God', '777', true, 1);
+// console.log(`Updated library:`, library);
 
 // Task 4: Remove a Book from the Collection
 // Write a function `removeBook` which takes a Book ID number as a parameter and removes the corresponding book from the collection.
@@ -70,7 +78,7 @@ function removeBook(bookId) {
 }
 
 
-removeBook('345')
+// removeBook('345')
 
 
 
@@ -100,7 +108,7 @@ function findBook(query) {
 }
 
 
-findBook('god')
+// findBook('j. r. r.')
 
 
 // // Task 6: Display the Collection
@@ -114,7 +122,7 @@ function displayBooks() {
   }
 }
 
-displayBooks()
+// displayBooks()
 
 // Task 7: Test Your Functions
 // Use the functions you have written to add, remove, find, and display books in the collection.
@@ -134,6 +142,7 @@ function toggleAvailability(bookId) {
   for (let book of library) {
     
     if (book.bookId == bookId) {
+      
       book.availability = !book.availability
     }
     console.log(book)
@@ -141,7 +150,7 @@ function toggleAvailability(bookId) {
 
 }
 
-toggleAvailability('777')
+// toggleAvailability('345')
 
 
 // Task 9: Multiple Copies
@@ -149,9 +158,32 @@ toggleAvailability('777')
 // Update your `addBook` function to increment the `copies` property if the book already exists in the collection, 
 // instead of adding a duplicate entry.
 
-// function addBook(book) {
-//   // your updated code here
-// }
+function addBook(title, author, bookId, availability, copies) {
+  // Check if book is in library
+  let book = {
+    title: title,
+    author: author,
+    bookId: bookId,
+    availability: availability,
+    copies: copies,
+    };
+  let existBook = library.find(book => book.bookId === book.bookId); 
+    // if book is in library, add 1 to copies
+    if (existBook) {
+      existBook.copies + copies;
+      // incriment copies if book exist
+    } else {
+      book.copies = 1;
+      library.push(book);
+    }
+    for (let book of library) {
+      console.log(book);
+    }
+  } 
+
+  addBook('Capitalism', 'Ayn Rand', '567', true, 1)
+  // Add the book to the library
+  
 
 // Task 10: Advanced Search
 // Extend the `findBook` function to also search by the number of copies available, so it can find all books that have at least a certain number of copies.
