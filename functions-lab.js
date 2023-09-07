@@ -167,7 +167,7 @@ function addBook(title, author, bookId, availability, copies) {
     availability: availability,
     copies: copies,
     };
-  let existBook = library.find(book => book.bookId === book.bookId); 
+  let library = library.find(book => book.bookId === book.bookId); 
     // if book is in library, add 1 to copies
     if (existBook) {
       existBook.copies + copies;
@@ -181,7 +181,7 @@ function addBook(title, author, bookId, availability, copies) {
     }
   } 
 
-  addBook('Capitalism', 'Ayn Rand', '567', true, 1)
+  addBook('Capitalism', 'Ayn Rand', '567', true, 1);
   // Add the book to the library
   
 
