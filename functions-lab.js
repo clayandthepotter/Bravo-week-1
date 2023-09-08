@@ -26,6 +26,13 @@ let book3 = {
   copies: 1
 };
 
+let book4 = {
+  title: 'The Bible',
+  author: 'God',
+  bookId: '777',
+  availability: true,
+  copies: 1
+};
 
 
 // Task 2: Create a Collection of Books
@@ -36,6 +43,7 @@ let library = [
   book1,
   book2,
   book3,
+  book4,
 ];
 
 // console.log(`Current library:`, library)
@@ -43,25 +51,25 @@ let library = [
 // // Task 3: Add a Book to the Collection
 // // Write a function `addBook` which takes a book object as a parameter and adds it to the collection of books.
 
-function addBook(title, author, bookId, availability, copies) {
-  // Create an book using the parameters
-  let book = {
-  title: title,
-  author: author,
-  bookId: bookId,
-  availability: availability,
-  copies: copies,
-  };
-  // Add the book to the library
-  library.push(book);
-  for (let book of library) {
-    console.log(book);
-  }
-  console.log(`You have added ${title} to the library.`);
-}
+// function addBook(title, author, bookId, availability, copies) {
+//   // Create an book using the parameters
+//   let book = {
+//   title: title,
+//   author: author,
+//   bookId: bookId,
+//   availability: availability,
+//   copies: copies,
+//   };
+//   // Add the book to the library
+//   library.push(book);
+//   for (let book of library) {
+//     console.log(book);
+//   }
+//   console.log(`You have added ${title} to the library.`);
+// }
 
 
-addBook('The Bible', 'God', '777', true, 1);
+// addBook('The Bible', 'God', '777', true, 1);
 // console.log(`Updated library:`, library);
 
 // Task 4: Remove a Book from the Collection
@@ -111,12 +119,12 @@ function findBook(query) {
 // findBook('j. r. r.')
 
 
-// // Task 6: Display the Collection
-// // Write a function `displayBooks` which displays the entire collection of books.
+// Task 6: Display the Collection
+// Write a function `displayBooks` which displays the entire collection of books.
 
 function displayBooks() {
   // log library
-  console.log('These are the available books in the Library.')
+  console.log(`There are ${library.length} books available in the Library.`)
   for (let book of library) {
     console.log(book);
   }
@@ -159,29 +167,81 @@ function toggleAvailability(bookId) {
 // instead of adding a duplicate entry.
 
 function addBook(title, author, bookId, availability, copies) {
-  // Check if book is in library
-  let book = {
-    title: title,
-    author: author,
-    bookId: bookId,
-    availability: availability,
-    copies: copies,
-    };
-  let library = library.find(book => book.bookId === book.bookId); 
-    // if book is in library, add 1 to copies
-    if (existBook) {
-      existBook.copies + copies;
-      // incriment copies if book exist
-    } else {
-      book.copies = 1;
-      library.push(book);
-    }
-    for (let book of library) {
-      console.log(book);
-    }
-  } 
+  
+let newBook = {
+  title: title,
+  author: author,
+  bookId: bookId,
+  availability: availability,
+  copies: copies,
+  };
 
-  addBook('Capitalism', 'Ayn Rand', '567', true, 1);
+  let existBook = library.find(book: (value: {
+//     title: string;
+//     author: string;
+//     bookId: string;
+//     availability: boolean;
+//     copies: number;
+// }, index: number, obj: {
+//     title: string;
+//     author: string;
+//     bookId: string;
+//     availability: boolean;
+//     copies: number;
+// }[]) => unknown, thisArg?: any): {
+//     title: string;
+//     author: string;
+//     bookId: string;
+//     availability: boolean;
+//     copies: number;
+// } | undefined (+1 overload)
+//   if (newBook.title === book.title)
+// }
+//   console.log(`Book to be added to the library:`, newBook);
+//   console.log(`Number of copies to be added: ${copies}`)  
+//   console.log(`There are currently ${library.length} books in the library.`);
+
+//   for (let i = 0; i < library.length; i++) {
+    
+//     let book = library[i]
+
+//     if (newBook.title.author !== book.title.author) {
+      
+//       library.push(newBook)
+      
+//       console.log(`You have added ${newBook.title} by ${newBook.author} to the library.`);
+      
+//       console.log(`We now have ${newBook.copies} of ${newBook.title} by ${newBook.author} in the library.`);
+        
+//       for (let book of library) { 
+//             console.log(`Our available titles are: ${book.title} - ${book.copies} copies.`)
+//           }
+//           return;
+//       } else {
+//         if (newBook.title.autor == book.title.autor) {        
+//           console.log(`New Book: ${newBook.copies}, Original ${book.copies}`);
+//           book.copies += newBook.copies
+//           console.log(`There are now ${book.copies} copies of ${book.title} in the library.`);
+//           return;
+//       }
+//     }
+//   }
+// }
+
+// addBook('The Hobbit', 'J. R. R. Tolkien', '346', true, 5);
+// addBook('Capitalism', 'Ayn Rand', '567', true, 1);
+  addBook('The Bible', 'God', '777', true, 7);
+  // addBook('The New Testament', 'God', '778', true, 2);
+  // 
+  // displayBooks()
+// console.log(library)
+
+// addBook('Capitalism', 'Ayn Rand', '567', true, 10);
+// addBook('The Bible', 'God', '777', true, 6);
+// addBook('The New Testament', 'God', '778', true, 2);
+
+// console.log(library)
+// displayBooks()
   // Add the book to the library
   
 
