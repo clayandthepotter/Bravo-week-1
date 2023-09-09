@@ -167,56 +167,31 @@ function toggleAvailability(bookId) {
 // instead of adding a duplicate entry.
 
 function addBook(title, author, bookId, availability, copies) {
-  
-  let newBook = {
-    title: title,
-    author: author,
-    bookId: bookId,
-    availability: availability,
-    copies: copies,
+  // Check if the book already exists in the library
+  let existingBook = library.find(book => book.bookId === bookId);
+
+  if (existingBook) {
+    // If the book exists, increase the number of copies
+    existingBook.copies += copies;
+  } else {
+    // If the book doesn't exist, create a new book object and push it to the library array
+    let newBook = {
+      title: title,
+      author: author,
+      bookId: bookId,
+      availability: availability,
+      copies: copies
     };
-
-    let existBook = library.find(function(book) {
-      if (book = ) {}
-      return book > 25; // Find the first number greater than 25
-    });
-  
-
+    library.push(newBook);
+  }
 }
-//   
-//   console.log(`Number of copies to be added: ${copies}`)  
-//   console.log(`There are currently ${library.length} books in the library.`);
 
-//   for (let i = 0; i < library.length; i++) {
-    
-//     let book = library[i]
+// Example usage:
+addBook("The Great Gatsby", "F. Scott Fitzgerald", 1, true, 2);
+addBook("To Kill a Mockingbird", "Harper Lee", 2, true, 3);
+addBook("The Great Gatsby", "F. Scott Fitzgerald", 1, true, 1); // Increase copies
 
-//     if (newBook.title.author !== book.title.author) {
-      
-//       library.push(newBook)
-      
-//       console.log(`You have added ${newBook.title} by ${newBook.author} to the library.`);
-      
-//       console.log(`We now have ${newBook.copies} of ${newBook.title} by ${newBook.author} in the library.`);
-        
-//       for (let book of library) { 
-//             console.log(`Our available titles are: ${book.title} - ${book.copies} copies.`)
-//           }
-//           return;
-//       } else {
-//         if (newBook.title.autor == book.title.autor) {        
-//           console.log(`New Book: ${newBook.copies}, Original ${book.copies}`);
-//           book.copies += newBook.copies
-//           console.log(`There are now ${book.copies} copies of ${book.title} in the library.`);
-//           return;
-//       }
-//     }
-//   }
-// }
-
-// addBook('The Hobbit', 'J. R. R. Tolkien', '346', true, 5);
-// addBook('Capitalism', 'Ayn Rand', '567', true, 1);
-  addBook('The Bible', 'God', '777', true, 7);
+console.log(library);
   // addBook('The New Testament', 'God', '778', true, 2);
   // 
   // displayBooks()
