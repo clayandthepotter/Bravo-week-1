@@ -168,36 +168,22 @@ function toggleAvailability(bookId) {
 
 function addBook(title, author, bookId, availability, copies) {
   
-let newBook = {
-  title: title,
-  author: author,
-  bookId: bookId,
-  availability: availability,
-  copies: copies,
-  };
+  let newBook = {
+    title: title,
+    author: author,
+    bookId: bookId,
+    availability: availability,
+    copies: copies,
+    };
 
-  let existBook = library.find(book: (value: {
-//     title: string;
-//     author: string;
-//     bookId: string;
-//     availability: boolean;
-//     copies: number;
-// }, index: number, obj: {
-//     title: string;
-//     author: string;
-//     bookId: string;
-//     availability: boolean;
-//     copies: number;
-// }[]) => unknown, thisArg?: any): {
-//     title: string;
-//     author: string;
-//     bookId: string;
-//     availability: boolean;
-//     copies: number;
-// } | undefined (+1 overload)
-//   if (newBook.title === book.title)
-// }
-//   console.log(`Book to be added to the library:`, newBook);
+    let existBook = library.find(function(book) {
+      if (book = ) {}
+      return book > 25; // Find the first number greater than 25
+    });
+  
+
+}
+//   
 //   console.log(`Number of copies to be added: ${copies}`)  
 //   console.log(`There are currently ${library.length} books in the library.`);
 
